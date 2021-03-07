@@ -56,7 +56,54 @@ public class LinkedList {
 		}
 		System.out.println("The linked list has a length of: " + count);
 	}
+	
+	public void returnRef(String data) {
+		int count = 0;
+		if (head == null) {
+			System.out.println("Empty Linked List");
+			return;
+//		}else {
+//			count = 1;
+//			if (head.data == data) {
+//				System.out.println("The location of " +data + " is " + count);
+//				return;
+//			}
+		}
+		Node current = head;
+		while (current.next != null) {
+			count++;
+			if (current.data == data) {
+				System.out.println("The location of " +data + " is " + count);
+				return;
+			}
+			current = current.next;
+		}
+		System.out.println("This item does not exist.");
+	}
 
+	public void checkItemExists(String data) {
+		Node current = head;
+		Boolean check = false;
+		if (head == null) {
+			System.out.println("This list is empty.");
+			return;
+		}
+		while (current.next != null) {
+			current = current.next;
+			if (current.data == data || head.data == data) {
+				check = true;
+			}
+		}
+		if (check == true) {
+			System.out.println("The value: " + data + " exists in the list");
+		}else {
+			System.out.println("The value: " + data + " does not exist in the list");
+		}
+		
+	}
+	
+	
+	
 	public void display() {
 		// Node current will point to head
 		Node current = head;
@@ -76,12 +123,13 @@ public class LinkedList {
 
 	public static void main(String[] args) {
 		LinkedList A = new LinkedList();
-		A.countNumValue(A);
 		A.insertItem("hi");
 		A.insertItem("hello");
+		A.display();
+		A.returnRef("Nanar");
 		A.insertItem("bye");
-		A.insertItem("hi");
-		A.deleteValue("Seema");
+		A.insertItem("Nanar");
+		A.insertItem("Seema");
 		A.display();
 
 	}
