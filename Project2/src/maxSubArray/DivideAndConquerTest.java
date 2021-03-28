@@ -9,11 +9,12 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
-public class KadanesTest {
+public class DivideAndConquerTest {
 
 	@Test
+
 	public void test() {
-		Kadanes k = new Kadanes();
+		DivideAndConquer d = new DivideAndConquer();
 		try {
 			File myObj = new File("maxSumtest.txt");
 			Scanner myReader = new Scanner(myObj);
@@ -32,18 +33,13 @@ public class KadanesTest {
 				}
 				int[] checkNums = Arrays.copyOfRange(numbers, 0, 100);
 
-				int[] resultArr = k.kadaneMax(checkNums);
-				int maxPay = resultArr[0];
-				int startDay = resultArr[1];
-				int endDay = resultArr[2];
-				if(numbers.length >= 2) {
-					
-					assertEquals(numbers[100],maxPay);
-					assertEquals(numbers[102], endDay);
-					assertEquals(numbers[101], startDay);
+				int max = d.maxSubSum(checkNums, 0, checkNums.length-1);
+				int maxPay = max;
+				if (numbers.length >= 2) {
+
+					assertEquals(numbers[100], maxPay);
+	
 				}
-
-
 			}
 			myReader.close();
 		} catch (FileNotFoundException e) {
@@ -52,5 +48,4 @@ public class KadanesTest {
 		}
 	}
 
-	
 }

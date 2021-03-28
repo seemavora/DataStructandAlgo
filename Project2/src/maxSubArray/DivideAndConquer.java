@@ -43,11 +43,11 @@ class DivideAndConquer {
 			start = rendDay;
 			end = rstartDay;
 		}
-//		return maxVal;
+
 		result[0] = max;
 		result[1]= start;
 		result[2] = end;
-//		return result;
+
 		return max;
 	}
 
@@ -56,19 +56,11 @@ class DivideAndConquer {
 			return arr[l];
 
 		int m = (l + r) / 2;
-//		int temp = maxIntersectionSum(arr,l,r,m);
+
 		int temp = Math.max(Math.max(maxSubSum(arr, l, m), maxSubSum(arr, m + 1, r)), maxIntersectionSum(arr, l, m, r));
-		System.out.println(temp);
+
 		return Math.max(Math.max(maxSubSum(arr, l, m), maxSubSum(arr, m + 1, r)), maxIntersectionSum(arr, l, m, r));
-//		return Math.max(Math.max(maxSubSum(arr, l, m), maxSubSum(arr, m + 1, r)), maxIntersectionSum(arr, l, m, r));
 
 	}
 
-	public static void main(String[] args) {
-		int arr[] = { 2, 3, 4, 5, 7 };
-		int n = arr.length;
-		int max_sum = maxSubSum(arr, 0, n - 1);
-
-		System.out.println("Maximum contiguous sum is " + max_sum );
-	}
 }
