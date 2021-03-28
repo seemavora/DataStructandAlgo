@@ -18,8 +18,8 @@ public class BruteForce {
 		int startDay = 0;
 		int endDay = 0;
 		for (int i = 0; i < len; i++) {
-			int sum = Arr[i];
-			for (int j = i+1; j<len; j++) {
+			int sum = 0;
+			for (int j = i; j<len; j++) {
 				sum = Arr[j]+sum;
 				if (sum > max) {
 					max = sum;
@@ -59,7 +59,7 @@ public class BruteForce {
             			
             		}
             	}
-            	int[] checkNums = Arrays.copyOfRange(numbers, 0, 96);
+            	int[] checkNums = Arrays.copyOfRange(numbers, 0, 100);
             	
             		
             		resultArr = bruteForce(checkNums);
