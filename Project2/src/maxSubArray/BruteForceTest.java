@@ -12,7 +12,7 @@ import org.junit.Test;
 public class BruteForceTest {
 
 	@Test
-	public void test() {
+	public void baseTest() {
 		BruteForce a = new BruteForce();
 		try {
 			File myObj = new File("maxSumtest.txt");
@@ -50,5 +50,14 @@ public class BruteForceTest {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void randArr() {
+		BruteForce a = new BruteForce();
+		int [] allPos = {1,2,3,4,5};
+		int []results = a.bruteForce(allPos);
+		assertEquals(results[0], 15);
+		
 	}
 }
